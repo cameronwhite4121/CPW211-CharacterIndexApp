@@ -27,49 +27,77 @@ namespace CPW211_TeamProject
         {
             // Arrange
 
-            string characterName = txtCharacterName.Text;
-            // Needs validation to avoid exception
-            string characterAge = txtCharacterAge.Text;
-            string? characterPower = txtCharacterPower.Text;
-            string? characterRival = txtCharacterRival.Text;
-            // Needs validation to avoid exception
-            string characterDebutDate = txtDebutDate.Text;
-            string characterComicDebut = txtDebutIssue.Text;
+            string characterName = "";
+            int characterAge = 0;
+            string? characterPower = null;
+            string? characterRival = null;
+            DateTime characterDebutDate = new DateTime();
+            string characterComicDebut = "";
 
-            // Show message box errors for invalid data in Validator method
-            bool isValid = true;
+            bool validData = true;
 
-            // Act
+            // Validate textbox.text
 
-            // Validate date
-            DateTime validDebutDate;
-            try
+            // Validate name
+            if (!string.IsNullOrWhiteSpace(txtCharacterName.Text))
             {
-                validDebutDate = Convert.ToDateTime(txtDebutDate.Text);               
+                characterName = txtCharacterName.Text.Trim();
             }
-            catch(FormatException exc)
+            else
             {
-                MessageBox.Show("Debut date must be a valid date");
-                isValid = false;
+                MessageBox.Show("Character name must not be empty");
+                validData = false;
             }
 
             // Validate age
-            int validCharacterAge;
             try
             {
-                validCharacterAge = Convert.ToInt32(characterAge);
+                characterAge = Convert.ToInt32(txtCharacterAge.Text.Trim());
             }
             catch (FormatException exc)
             {
-                MessageBox.Show("Character age must be a valid age");
-                isValid = false;
+                MessageBox.Show("Character age must be a valid integer");
+                validData = false;
             }
 
-            if(isValid)
+            // Validate debut date
+            try
             {
-                Character currentCharacter = new(characterName, validCharacterAge, characterPower,
-                                                 characterRival, validDebutDate,
-                                                 characterComicDebut);
+                DateTime.TryParse(txtDebutDate.Text.Trim(), out characterDebutDate);
+            }
+            catch (FormatException exc)
+            {
+                MessageBox.Show("Debut date must be a valid date");
+                validData = false;
+            }
+
+            // Validate comic debut
+            if (!string.IsNullOrWhiteSpace(txtDebutIssue.Text))
+            {
+                characterComicDebut = txtDebutIssue.Text.Trim();
+            }
+            else
+            {
+                MessageBox.Show("Character name must not be empty");
+                validData = false;
+            }
+
+            Character currentCharacter = new(characterName, characterAge, characterPower,
+                                                 characterRival, characterDebutDate, characterComicDebut);
+
+            if (validData)
+            {
+                try
+                {
+                    
+
+                    if (ValidationHelper.Validate(currentCharacter))
+                    {
+                        // Add to database
+                    }
+                }
+                catch (ArgumentException) { }
+                
 
                 // Add to database
             }
