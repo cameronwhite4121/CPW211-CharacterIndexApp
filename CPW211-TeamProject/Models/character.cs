@@ -12,6 +12,17 @@ namespace CPW211_TeamProject.Models
     /// </summary> 
     public partial class Character
     {
+        public Character(string name, int age, string? power, 
+                         string? rival, DateOnly debutDate, 
+                         string comicDebut) 
+        {
+            this.Name = name;
+            this.Age = age;
+            this.SuperPower = power;
+            this.Rival = rival;
+            this.DebutDate = debutDate;
+            this.ComicBookDebut = comicDebut;
+        }
         /// <summary> 
         /// Character's ID as they are stored in the database. 
         /// </summary> 
@@ -48,7 +59,7 @@ namespace CPW211_TeamProject.Models
         /// Character's debut date, using DateTime 
         /// </summary> 
         [Required]
-        public DateTime DebutDate { get; set; }
+        public DateOnly DebutDate { get; set; }
         
         /// <summary> 
         /// Character's comic book issue debut 
