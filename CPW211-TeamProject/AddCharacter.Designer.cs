@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            btnAddCharacter = new Button();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -46,15 +46,15 @@
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // btnAddCharacter
             // 
-            button1.Location = new Point(214, 240);
-            button1.Name = "button1";
-            button1.Size = new Size(106, 34);
-            button1.TabIndex = 1;
-            button1.Text = "Add Character";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnAddCharacter.Location = new Point(214, 240);
+            btnAddCharacter.Name = "btnAddCharacter";
+            btnAddCharacter.Size = new Size(106, 34);
+            btnAddCharacter.TabIndex = 1;
+            btnAddCharacter.Text = "Add Character";
+            btnAddCharacter.UseVisualStyleBackColor = true;
+            btnAddCharacter.Click += btnAddCharacter_Click;
             // 
             // label1
             // 
@@ -189,7 +189,7 @@
             BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(558, 313);
             Controls.Add(groupBox1);
-            Controls.Add(button1);
+            Controls.Add(btnAddCharacter);
             Name = "AddCharacter";
             Text = "Add Character";
             groupBox1.ResumeLayout(false);
@@ -199,7 +199,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button btnAddCharacter;
         private Label label1;
         private Label label2;
         private Label label3;

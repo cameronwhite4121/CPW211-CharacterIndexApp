@@ -17,10 +17,9 @@ namespace CPW211_TeamProject
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAddCharacter_Click(object sender, EventArgs e)
         {
-            // if (data is valid)
-            // do something
+
         }
     }
 }
