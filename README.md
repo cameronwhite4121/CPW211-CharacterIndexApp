@@ -25,7 +25,8 @@
   any of the characters that are stored in the database.  
 ## Helpful Links
 Markdown Cheatsheet: [https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet](url)  
-EF Core with Winform Guide: [https://learn.microsoft.com/en-us/ef/core/get-started/overview/install](url)
+EF Core with Winform Guide: [https://learn.microsoft.com/en-us/ef/core/get-started/overview/install](url)  
+Validator Class Documentation: [https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validator?view=net-8.0](url)
 
 
 
