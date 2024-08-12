@@ -61,6 +61,7 @@ namespace CPW211_TeamProject.Models
         /// Character's debut date, using DateTime 
         /// </summary> 
         [Required(ErrorMessage = "DebutDate is required")]
+        [DataType(DataType.Date, ErrorMessage = "Debut date must be a valid date")]
         public DateTime DebutDate { get; set; }
         
         /// <summary> 
