@@ -13,7 +13,7 @@ namespace CPW211_TeamProject.Models
     public partial class Character
     {
         public Character(string name, int age, string? power, 
-                         string? rival, DateOnly debutDate, 
+                         string? rival, DateTime debutDate, 
                          string comicDebut) 
         {
             this.Name = name;
@@ -32,41 +32,43 @@ namespace CPW211_TeamProject.Models
         /// <summary> 
         /// Character's name. 
         /// </summary> 
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
         public required string Name { get; set; }
 
         /// <summary> 
         /// Character's age, the int max value is 2,147,483,647. 
         /// </summary> 
-        [Required]
-        [Range(0, int.MaxValue)]
+        [Required(ErrorMessage = "Age is required")]
+        [Range(0, int.MaxValue, ErrorMessage = "Age must be greater than 0")]
         public int Age { get; set; }
 
         /// <summary> 
         /// Character's Superpower, it can be left empty 
-        /// in case they do not have one. 
+        /// in case they do not have one. Handles multiple powers in 
+        /// one string
         /// </summary> 
+        [StringLength(100, ErrorMessage = "Power/powers are too long")]
         public string? SuperPower { get; set; }
 
         /// <summary> 
         /// Character's Rival, it can be left empty, 
         /// or they can add multiples 
         /// </summary> 
-        [StringLength(1000)]
+        [StringLength(40, ErrorMessage = "Rival's name is too long")]
         public string? Rival { get; set; }
 
         /// <summary> 
         /// Character's debut date, using DateTime 
         /// </summary> 
-        [Required]
-        public DateOnly DebutDate { get; set; }
+        [Required(ErrorMessage = "DebutDate is required")]
+        public DateTime DebutDate { get; set; }
         
         /// <summary> 
         /// Character's comic book issue debut 
         /// for example, Spiderman: "Amazing Fantasy #15" 
         /// </summary> 
-        [Required]
-        [StringLength(100)]
+        [Required(ErrorMessage = "Debut issue is required")]
+        [StringLength(100, ErrorMessage = "Debut issue is too long")]
         public required string ComicBookDebut { get; set; }
     }
 }
