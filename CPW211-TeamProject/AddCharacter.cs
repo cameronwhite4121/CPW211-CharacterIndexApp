@@ -114,6 +114,7 @@ namespace CPW211_TeamProject
                         CharacterContext dbContext = new();
                         dbContext.Characters.Add(currentCharacter);
                         dbContext.SaveChanges();
+                        MessageBox.Show($"{characterName} was added");
                     }
                 }
                 catch (ArgumentException) { }
