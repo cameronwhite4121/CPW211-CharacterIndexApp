@@ -70,7 +70,7 @@ namespace CPW211_TeamProject
             // Check for unrequired rival
             if (!string.IsNullOrWhiteSpace(txtCharacterRival.Text))
             {
-                characterPower = txtCharacterRival.Text.Trim();
+                characterRival = txtCharacterRival.Text.Trim();
             }
 
             // Check for unrequired power
