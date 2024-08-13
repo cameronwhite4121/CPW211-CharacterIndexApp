@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CPW211_TeamProject.Data;
 
-public partial class CharacterContext : DbContext
+public class CharacterContext : DbContext
 {
     public CharacterContext()
     {
@@ -22,6 +22,6 @@ public partial class CharacterContext : DbContext
     }
 
     // Tracks characters in the database
-    public virtual DbSet<Character> Characters { get; set; }
+    public DbSet<Character> Characters { get; set; }
 }
 

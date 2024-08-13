@@ -12,17 +12,19 @@ namespace CPW211_TeamProject.Models
     /// </summary> 
     public partial class Character
     {
-        public Character(string name, int age, string? power, 
-                         string? rival, DateTime debutDate, 
+        public Character() { }
+        public Character(string name, int age, string power, 
+                         string rival, DateTime debutDate, 
                          string comicDebut) 
         {
-            Name = name;
-            Age = age;
-            SuperPower = power;
-            Rival = rival;
-            DebutDate = debutDate;
-            ComicBookDebut = comicDebut;
+            this.Name = name;
+            this.Age = age;
+            this.SuperPower = power;
+            this.Rival = rival;
+            this.DebutDate = debutDate;
+            this.ComicBookDebut = comicDebut;
         }
+
         /// <summary> 
         /// Character's ID as they are stored in the database. 
         /// </summary> 

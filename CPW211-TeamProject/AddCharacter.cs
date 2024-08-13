@@ -1,4 +1,5 @@
-﻿using CPW211_TeamProject.Models;
+﻿using CPW211_TeamProject.Data;
+using CPW211_TeamProject.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,12 +26,12 @@ namespace CPW211_TeamProject
         /// </summary>
         private void btnAddCharacter_Click(object sender, EventArgs e)
         {
-            // Arrange
+            // Arrange with default values
 
             string characterName = "";
             int characterAge = 0;
-            string? characterPower = null;
-            string? characterRival = null;
+            string? characterPower = "No power/s";
+            string? characterRival = "No rival/s";
             DateTime characterDebutDate = new DateTime();
             string characterComicDebut = "";
 
@@ -58,6 +59,24 @@ namespace CPW211_TeamProject
             {
                 MessageBox.Show("Character age must be a valid integer");
                 validData = false;
+            }
+
+            // Check for unrequired power
+            if (!string.IsNullOrWhiteSpace(txtCharacterPower.Text))
+            {
+                characterPower = txtCharacterPower.Text.Trim();
+            }
+
+            // Check for unrequired rival
+            if (!string.IsNullOrWhiteSpace(txtCharacterRival.Text))
+            {
+                characterPower = txtCharacterRival.Text.Trim();
+            }
+
+            // Check for unrequired power
+            if (!string.IsNullOrWhiteSpace(txtCharacterPower.Text))
+            {
+                characterPower = txtCharacterPower.Text.Trim();
             }
 
             // Validate debut date
@@ -89,17 +108,15 @@ namespace CPW211_TeamProject
             {
                 try
                 {
-                    
-
+                    // Validate the data using the model's data annotations
                     if (ValidationHelper.Validate(currentCharacter))
                     {
-                        // Add to database
+                        CharacterContext dbContext = new();
+                        dbContext.Characters.Add(currentCharacter);
+                        dbContext.SaveChanges();
                     }
                 }
                 catch (ArgumentException) { }
-                
-
-                // Add to database
             }
         }
     }
