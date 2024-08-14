@@ -82,7 +82,8 @@ namespace CPW211_TeamProject
             // Validate debut date
             try
             {
-                DateTime.TryParse(txtDebutDate.Text.Trim(), out characterDebutDate);
+                DateTime.TryParse(txtDebutDate.Text.Trim(), out DateTime DebutDate);
+                characterDebutDate = DebutDate.Date;
             }
             catch (FormatException exc)
             {
