@@ -44,6 +44,15 @@ namespace CPW211_TeamProject
             {
                 characterName = txtCharacterName.Text.Trim();
             }
+
+            // if the Character is already in the database, show an error message
+            CharacterContext dbContextCharacter = new();
+            if (dbContextCharacter.Characters.Any(c => c.Name == characterName))
+            {
+                MessageBox.Show("Character already exists");
+                validData = false;
+            }
+
             else
             {
                 MessageBox.Show("Character name must not be empty");
@@ -83,6 +92,7 @@ namespace CPW211_TeamProject
             try
             {
                 DateTime.TryParse(txtDebutDate.Text.Trim(), out DateTime DebutDate);
+
                 characterDebutDate = DebutDate.Date;
             }
             catch (FormatException exc)
