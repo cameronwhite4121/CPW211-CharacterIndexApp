@@ -56,6 +56,9 @@ namespace CPW211_TeamProject.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Name")
+                        .IsUnique();
+
                     b.ToTable("Characters");
                 });
 #pragma warning restore 612, 618

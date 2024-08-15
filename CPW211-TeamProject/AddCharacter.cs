@@ -43,15 +43,16 @@ namespace CPW211_TeamProject
             if (!string.IsNullOrWhiteSpace(txtCharacterName.Text))
             {
                 characterName = txtCharacterName.Text.Trim();
+
+                // if the Character is already in the database, show an error message
+                CharacterContext dbContextCharacter = new();
+                if (dbContextCharacter.Characters.Any(c => c.Name == characterName))
+                {
+                    MessageBox.Show("Character already exists");
+                    validData = false;
+                }
             }
 
-            // if the Character is already in the database, show an error message
-            CharacterContext dbContextCharacter = new();
-            if (dbContextCharacter.Characters.Any(c => c.Name == characterName))
-            {
-                MessageBox.Show("Character already exists");
-                validData = false;
-            }
 
             else
             {
@@ -88,19 +89,11 @@ namespace CPW211_TeamProject
                 characterPower = txtCharacterPower.Text.Trim();
             }
 
-            // Validate debut date
-            try
-            {
-                DateTime.TryParse(txtDebutDate.Text.Trim(), out DateTime DebutDate);
-
-                characterDebutDate = DebutDate.Date;
-            }
-            catch (FormatException exc)
-            {
-                MessageBox.Show("Debut date must be a valid date");
-                validData = false;
-            }
-
+            // grab the date from the date time picker
+            // and store it in the characterDebutDate variable
+            // the DTP already has validation built in
+            characterDebutDate = DTPDebutDate.Value;
+            
             // Validate comic debut
             if (!string.IsNullOrWhiteSpace(txtDebutIssue.Text))
             {

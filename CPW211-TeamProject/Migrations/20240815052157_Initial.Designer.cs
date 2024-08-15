@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CPW211_TeamProject.Migrations
 {
     [DbContext(typeof(CharacterContext))]
-    [Migration("20240813002021_UpdatedCharacterClass")]
-    partial class UpdatedCharacterClass
+    [Migration("20240815052157_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,6 +58,9 @@ namespace CPW211_TeamProject.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Characters");
                 });
