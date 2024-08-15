@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +12,7 @@ namespace CPW211_TeamProject.Models
     /// <summary> 
     /// This class represents a character, be it a villain, hero or side character. 
     /// </summary> 
+    [Index(nameof(Name), IsUnique = true)] // Tell EF Core to create an index for the Name column
     public partial class Character
     {
         public Character() { }
