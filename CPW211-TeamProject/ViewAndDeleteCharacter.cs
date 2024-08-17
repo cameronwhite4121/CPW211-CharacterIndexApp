@@ -73,6 +73,10 @@ namespace CPW211_TeamProject
             PopulateCharacterDetails();
         }
 
+        /// <summary>
+        /// If a character is selected in the list box, this method populates
+        /// all the character details text boxes with the characters information.
+        /// </summary>
         public void PopulateCharacterDetails()
         {
             try
