@@ -27,7 +27,20 @@ namespace CPW211_TeamProject
 
         private void btnDeleteCharacter_Click(object sender, EventArgs e)
         {
-            // Remove character at index something rather 
+            try
+            {
+                Character selectedCharacter = lsbxCharacterList.SelectedItem as Character;
+
+                CharacterContext dbContext = new CharacterContext();
+                dbContext.Characters.Remove(selectedCharacter);
+                dbContext.SaveChanges();
+                PopulateList();
+                MessageBox.Show("Character was removed");
+            }
+            catch(ArgumentNullException)
+            {
+                MessageBox.Show("A character must be selected");
+            }
         }
 
         private void ViewAndDeleteCharacter_Load(object sender, EventArgs e)
