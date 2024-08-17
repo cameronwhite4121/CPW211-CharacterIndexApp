@@ -19,12 +19,30 @@ namespace CPW211_TeamProject
             InitializeComponent();
         }
 
-        private void btnEditCharacter_Click(object sender, EventArgs e)
+        private void btnUpdateCharacter_Click(object sender, EventArgs e)
         {
             // Open add character form but change the labels
-            AddCharacter updateForm = new AddCharacter();
-            updateForm.ShowDialog();
-            // to edit character to reduce redundant code
+            try
+            {
+                CharacterContext dbContext = new CharacterContext();
+                Character selectedCharacter = lsbxCharacterList.SelectedItem as Character;
+                selectedCharacter.Name = txtCharacterName.Text;
+                selectedCharacter.Age = Convert.ToInt32(txtCharacterAge.Text);
+                selectedCharacter.SuperPower = txtCharacterPower.Text;
+                selectedCharacter.Rival = txtCharacterRival.Text;
+                selectedCharacter.DebutDate = dtpDebutDate.Value;
+                selectedCharacter.ComicBookDebut = txtDebutIssue.Text;
+
+                // Add further validation here, just like the add character form
+
+                dbContext.Characters.Update(selectedCharacter);
+                dbContext.SaveChanges();
+                PopulateList();
+            }
+            catch (ArgumentNullException) 
+            {
+                MessageBox.Show("All fields must be filled out");
+            }
         }
 
         private void btnDeleteCharacter_Click(object sender, EventArgs e)
@@ -86,7 +104,7 @@ namespace CPW211_TeamProject
                 txtCharacterAge.Text = selectedCharacter.Age.ToString();
                 txtCharacterPower.Text = selectedCharacter.SuperPower.ToString();
                 txtCharacterRival.Text = selectedCharacter.Rival.ToString();
-                txtDebutDate.Text = selectedCharacter.DebutDate.ToString();
+                dtpDebutDate.Value = Convert.ToDateTime(selectedCharacter.DebutDate);
                 txtDebutIssue.Text = selectedCharacter.ComicBookDebut.ToString();
             }
             catch (ArgumentNullException)

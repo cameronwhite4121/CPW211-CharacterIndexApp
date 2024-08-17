@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnEditCharacter = new Button();
+            btnUpdateCharacter = new Button();
             btnDeleteCharacter = new Button();
             lsbxCharacterList = new ListBox();
             groupBox1 = new GroupBox();
+            dtpDebutDate = new DateTimePicker();
             txtDebutIssue = new TextBox();
             label7 = new Label();
-            txtDebutDate = new TextBox();
             txtCharacterRival = new TextBox();
             label6 = new Label();
             label5 = new Label();
@@ -48,15 +48,15 @@
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnEditCharacter
+            // btnUpdateCharacter
             // 
-            btnEditCharacter.Location = new Point(311, 95);
-            btnEditCharacter.Name = "btnEditCharacter";
-            btnEditCharacter.Size = new Size(112, 38);
-            btnEditCharacter.TabIndex = 0;
-            btnEditCharacter.Text = "Edit Character";
-            btnEditCharacter.UseVisualStyleBackColor = true;
-            btnEditCharacter.Click += btnEditCharacter_Click;
+            btnUpdateCharacter.Location = new Point(311, 95);
+            btnUpdateCharacter.Name = "btnUpdateCharacter";
+            btnUpdateCharacter.Size = new Size(112, 38);
+            btnUpdateCharacter.TabIndex = 0;
+            btnUpdateCharacter.Text = "Update Character";
+            btnUpdateCharacter.UseVisualStyleBackColor = true;
+            btnUpdateCharacter.Click += btnUpdateCharacter_Click;
             // 
             // btnDeleteCharacter
             // 
@@ -80,9 +80,9 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(dtpDebutDate);
             groupBox1.Controls.Add(txtDebutIssue);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(txtDebutDate);
             groupBox1.Controls.Add(txtCharacterRival);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
@@ -100,11 +100,20 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Character Details";
             // 
+            // dtpDebutDate
+            // 
+            dtpDebutDate.Location = new Point(155, 195);
+            dtpDebutDate.MaxDate = new DateTime(2024, 8, 14, 0, 0, 0, 0);
+            dtpDebutDate.MinDate = new DateTime(1930, 1, 1, 0, 0, 0, 0);
+            dtpDebutDate.Name = "dtpDebutDate";
+            dtpDebutDate.Size = new Size(100, 23);
+            dtpDebutDate.TabIndex = 15;
+            dtpDebutDate.Value = new DateTime(2024, 8, 13, 0, 0, 0, 0);
+            // 
             // txtDebutIssue
             // 
             txtDebutIssue.Location = new Point(155, 233);
             txtDebutIssue.Name = "txtDebutIssue";
-            txtDebutIssue.ReadOnly = true;
             txtDebutIssue.Size = new Size(100, 23);
             txtDebutIssue.TabIndex = 14;
             // 
@@ -117,19 +126,10 @@
             label7.TabIndex = 13;
             label7.Text = "Debut Issue:";
             // 
-            // txtDebutDate
-            // 
-            txtDebutDate.Location = new Point(155, 192);
-            txtDebutDate.Name = "txtDebutDate";
-            txtDebutDate.ReadOnly = true;
-            txtDebutDate.Size = new Size(100, 23);
-            txtDebutDate.TabIndex = 12;
-            // 
             // txtCharacterRival
             // 
             txtCharacterRival.Location = new Point(155, 151);
             txtCharacterRival.Name = "txtCharacterRival";
-            txtCharacterRival.ReadOnly = true;
             txtCharacterRival.Size = new Size(100, 23);
             txtCharacterRival.TabIndex = 11;
             // 
@@ -163,7 +163,6 @@
             // 
             txtCharacterName.Location = new Point(155, 25);
             txtCharacterName.Name = "txtCharacterName";
-            txtCharacterName.ReadOnly = true;
             txtCharacterName.Size = new Size(100, 23);
             txtCharacterName.TabIndex = 5;
             // 
@@ -171,7 +170,6 @@
             // 
             txtCharacterPower.Location = new Point(155, 107);
             txtCharacterPower.Name = "txtCharacterPower";
-            txtCharacterPower.ReadOnly = true;
             txtCharacterPower.Size = new Size(100, 23);
             txtCharacterPower.TabIndex = 7;
             // 
@@ -188,7 +186,6 @@
             // 
             txtCharacterAge.Location = new Point(155, 66);
             txtCharacterAge.Name = "txtCharacterAge";
-            txtCharacterAge.ReadOnly = true;
             txtCharacterAge.Size = new Size(100, 23);
             txtCharacterAge.TabIndex = 6;
             // 
@@ -219,7 +216,7 @@
             Controls.Add(groupBox1);
             Controls.Add(lsbxCharacterList);
             Controls.Add(btnDeleteCharacter);
-            Controls.Add(btnEditCharacter);
+            Controls.Add(btnUpdateCharacter);
             Name = "ViewAndDeleteCharacter";
             Text = "View/Delete Character";
             Load += ViewAndDeleteCharacter_Load;
@@ -230,13 +227,12 @@
 
         #endregion
 
-        private Button btnEditCharacter;
+        private Button btnUpdateCharacter;
         private Button btnDeleteCharacter;
         private ListBox lsbxCharacterList;
         private GroupBox groupBox1;
         private TextBox txtDebutIssue;
         private Label label7;
-        private TextBox txtDebutDate;
         private TextBox txtCharacterRival;
         private Label label6;
         private Label label5;
@@ -247,5 +243,6 @@
         private TextBox txtCharacterAge;
         private Label label2;
         private Label label3;
+        private DateTimePicker dtpDebutDate;
     }
 }
