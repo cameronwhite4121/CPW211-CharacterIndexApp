@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CPW211_TeamProject.Data;
+using CPW211_TeamProject.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +28,33 @@ namespace CPW211_TeamProject
         private void btnDeleteCharacter_Click(object sender, EventArgs e)
         {
             // Remove character at index something rather 
+        }
+
+        private void ViewAndDeleteCharacter_Load(object sender, EventArgs e)
+        {
+            // Adds all characters in the database to the character list box
+            PopulateList();
+        }
+
+        /// <summary>
+        /// Populates the character list box with all the character names
+        /// in the database
+        /// </summary>
+        public void PopulateList()
+        {
+            // Should make this asyncronous
+
+            CharacterContext dbContext = new CharacterContext();
+            List<Character> allCharacters = dbContext.Characters.ToList();
+            foreach (Character character in allCharacters)
+            {
+                lsbxCharacterList.Items.Add(character.Name);
+            }
+        }
+
+        private void lsbxCharacterList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Character selectedCharacter = lsbxCharacterList.SelectedItem as Character;
         }
     }
 }

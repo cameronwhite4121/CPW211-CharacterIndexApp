@@ -76,6 +76,7 @@
             lsbxCharacterList.Name = "lsbxCharacterList";
             lsbxCharacterList.Size = new Size(236, 274);
             lsbxCharacterList.TabIndex = 3;
+            lsbxCharacterList.SelectedIndexChanged += lsbxCharacterList_SelectedIndexChanged;
             // 
             // groupBox1
             // 
@@ -221,6 +222,7 @@
             Controls.Add(btnEditCharacter);
             Name = "ViewAndDeleteCharacter";
             Text = "View/Delete Character";
+            Load += ViewAndDeleteCharacter_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
