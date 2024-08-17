@@ -46,15 +46,23 @@ namespace CPW211_TeamProject
 
             CharacterContext dbContext = new CharacterContext();
             List<Character> allCharacters = dbContext.Characters.ToList();
-            foreach (Character character in allCharacters)
-            {
-                lsbxCharacterList.Items.Add(character.Name);
-            }
+
+            // Set the DataSource of the ListBox
+            lsbxCharacterList.DataSource = allCharacters;
+            lsbxCharacterList.DisplayMember = "Name";
+            lsbxCharacterList.ValueMember = "Id";
         }
 
         private void lsbxCharacterList_SelectedIndexChanged(object sender, EventArgs e)
         {
             Character selectedCharacter = lsbxCharacterList.SelectedItem as Character;
+            txtCharacterName.Text = selectedCharacter.Name.ToString();
+            txtCharacterAge.Text = selectedCharacter.Age.ToString();
+            txtCharacterPower.Text = selectedCharacter.SuperPower.ToString();
+            txtCharacterRival.Text = selectedCharacter.Rival.ToString();
+            txtDebutDate.Text = selectedCharacter.DebutDate.ToString();
+            txtDebutIssue.Text = selectedCharacter.ComicBookDebut.ToString();
+            
         }
     }
 }
