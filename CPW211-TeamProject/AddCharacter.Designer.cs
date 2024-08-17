@@ -36,9 +36,9 @@
             txtCharacterAge = new TextBox();
             txtCharacterPower = new TextBox();
             groupBox1 = new GroupBox();
+            DTPDebutDate = new DateTimePicker();
             txtDebutIssue = new TextBox();
             label7 = new Label();
-            txtDebutDate = new TextBox();
             txtCharacterRival = new TextBox();
             label6 = new Label();
             label5 = new Label();
@@ -51,7 +51,7 @@
             btnAddCharacter.Location = new Point(214, 240);
             btnAddCharacter.Name = "btnAddCharacter";
             btnAddCharacter.Size = new Size(106, 34);
-            btnAddCharacter.TabIndex = 1;
+            btnAddCharacter.TabIndex = 11;
             btnAddCharacter.Text = "Add Character";
             btnAddCharacter.UseVisualStyleBackColor = true;
             btnAddCharacter.Click += btnAddCharacter_Click;
@@ -106,9 +106,9 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(DTPDebutDate);
             groupBox1.Controls.Add(txtDebutIssue);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(txtDebutDate);
             groupBox1.Controls.Add(txtCharacterRival);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
@@ -126,12 +126,22 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Character Details";
             // 
+            // DTPDebutDate
+            // 
+            DTPDebutDate.Location = new Point(369, 73);
+            DTPDebutDate.MaxDate = new DateTime(2024, 8, 14, 0, 0, 0, 0);
+            DTPDebutDate.MinDate = new DateTime(1930, 1, 1, 0, 0, 0, 0);
+            DTPDebutDate.Name = "DTPDebutDate";
+            DTPDebutDate.Size = new Size(100, 23);
+            DTPDebutDate.TabIndex = 9;
+            DTPDebutDate.Value = new DateTime(2024, 8, 13, 0, 0, 0, 0);
+            // 
             // txtDebutIssue
             // 
             txtDebutIssue.Location = new Point(369, 114);
             txtDebutIssue.Name = "txtDebutIssue";
             txtDebutIssue.Size = new Size(100, 23);
-            txtDebutIssue.TabIndex = 14;
+            txtDebutIssue.TabIndex = 10;
             // 
             // label7
             // 
@@ -142,19 +152,12 @@
             label7.TabIndex = 13;
             label7.Text = "Debut Issue:";
             // 
-            // txtDebutDate
-            // 
-            txtDebutDate.Location = new Point(369, 73);
-            txtDebutDate.Name = "txtDebutDate";
-            txtDebutDate.Size = new Size(100, 23);
-            txtDebutDate.TabIndex = 12;
-            // 
             // txtCharacterRival
             // 
             txtCharacterRival.Location = new Point(369, 32);
             txtCharacterRival.Name = "txtCharacterRival";
             txtCharacterRival.Size = new Size(100, 23);
-            txtCharacterRival.TabIndex = 11;
+            txtCharacterRival.TabIndex = 8;
             // 
             // label6
             // 
@@ -209,10 +212,10 @@
         private GroupBox groupBox1;
         private Label label5;
         private Label label4;
-        private TextBox txtDebutDate;
         private TextBox txtCharacterRival;
         private Label label6;
         private TextBox txtDebutIssue;
         private Label label7;
+        private DateTimePicker DTPDebutDate;
     }
 }

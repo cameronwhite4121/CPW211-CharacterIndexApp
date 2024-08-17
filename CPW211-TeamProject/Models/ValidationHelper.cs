@@ -29,7 +29,9 @@ namespace CPW211_TeamProject.Models
             }
 
             // Show errors
-            MessageBox.Show(string.Join(Environment.NewLine, validationResults.Select(vr => vr.ErrorMessage)));
+            IEnumerable<string?> errorMessages = validationResults.Select(vr => vr.ErrorMessage);
+            string errorMessageDisplay = string.Join(Environment.NewLine, errorMessages);
+            MessageBox.Show(errorMessageDisplay);
 
             // Returns list of errors
             return false; 

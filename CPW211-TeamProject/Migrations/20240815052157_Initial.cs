@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CPW211_TeamProject.Migrations
 {
     /// <inheritdoc />
-    public partial class AddCharacterClass : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,10 +17,10 @@ namespace CPW211_TeamProject.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
-                    SuperPower = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Rival = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
+                    SuperPower = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    Rival = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
                     DebutDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ComicBookDebut = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
@@ -28,6 +28,12 @@ namespace CPW211_TeamProject.Migrations
                 {
                     table.PrimaryKey("PK_Characters", x => x.Id);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Characters_Name",
+                table: "Characters",
+                column: "Name",
+                unique: true);
         }
 
         /// <inheritdoc />

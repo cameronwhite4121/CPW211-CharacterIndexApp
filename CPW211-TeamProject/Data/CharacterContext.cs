@@ -1,5 +1,6 @@
 ﻿using CPW211_TeamProject.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,4 +25,3 @@ public class CharacterContext : DbContext
     // Tracks characters in the database
     public DbSet<Character> Characters { get; set; }
 }
-
