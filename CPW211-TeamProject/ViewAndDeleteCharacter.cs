@@ -22,6 +22,8 @@ namespace CPW211_TeamProject
         private void btnEditCharacter_Click(object sender, EventArgs e)
         {
             // Open add character form but change the labels
+            AddCharacter updateForm = new AddCharacter();
+            updateForm.ShowDialog();
             // to edit character to reduce redundant code
         }
 
@@ -68,14 +70,25 @@ namespace CPW211_TeamProject
 
         private void lsbxCharacterList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Character selectedCharacter = lsbxCharacterList.SelectedItem as Character;
-            txtCharacterName.Text = selectedCharacter.Name.ToString();
-            txtCharacterAge.Text = selectedCharacter.Age.ToString();
-            txtCharacterPower.Text = selectedCharacter.SuperPower.ToString();
-            txtCharacterRival.Text = selectedCharacter.Rival.ToString();
-            txtDebutDate.Text = selectedCharacter.DebutDate.ToString();
-            txtDebutIssue.Text = selectedCharacter.ComicBookDebut.ToString();
-            
+            PopulateCharacterDetails();
+        }
+
+        public void PopulateCharacterDetails()
+        {
+            try
+            {
+                Character selectedCharacter = lsbxCharacterList.SelectedItem as Character;
+                txtCharacterName.Text = selectedCharacter.Name.ToString();
+                txtCharacterAge.Text = selectedCharacter.Age.ToString();
+                txtCharacterPower.Text = selectedCharacter.SuperPower.ToString();
+                txtCharacterRival.Text = selectedCharacter.Rival.ToString();
+                txtDebutDate.Text = selectedCharacter.DebutDate.ToString();
+                txtDebutIssue.Text = selectedCharacter.ComicBookDebut.ToString();
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("A character must be selected");
+            }
         }
     }
 }
