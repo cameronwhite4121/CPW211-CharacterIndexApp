@@ -39,7 +39,7 @@ namespace CPW211_TeamProject
 
             // Validate textbox.text
 
-            // Validate name
+            // NAME validation
             if (!string.IsNullOrWhiteSpace(txtCharacterName.Text))
             {
                 characterName = txtCharacterName.Text.Trim();
@@ -52,15 +52,13 @@ namespace CPW211_TeamProject
                     validData = false;
                 }
             }
-
-
             else
             {
                 MessageBox.Show("Character name must not be empty");
                 validData = false;
             }
 
-            // Validate age
+            // AGE validation
             try
             {
                 characterAge = Convert.ToInt32(txtCharacterAge.Text.Trim());
@@ -71,22 +69,16 @@ namespace CPW211_TeamProject
                 validData = false;
             }
 
-            // Check for unrequired power
+            // POWER validation (not required actually)
             if (!string.IsNullOrWhiteSpace(txtCharacterPower.Text))
             {
                 characterPower = txtCharacterPower.Text.Trim();
             }
 
-            // Check for unrequired rival
+            // RIVAL validation (not required actually)
             if (!string.IsNullOrWhiteSpace(txtCharacterRival.Text))
             {
                 characterRival = txtCharacterRival.Text.Trim();
-            }
-
-            // Check for unrequired power
-            if (!string.IsNullOrWhiteSpace(txtCharacterPower.Text))
-            {
-                characterPower = txtCharacterPower.Text.Trim();
             }
 
             // grab the date from the date time picker
@@ -94,14 +86,14 @@ namespace CPW211_TeamProject
             // the DTP already has validation built in
             characterDebutDate = DTPDebutDate.Value;
             
-            // Validate comic debut
+            // COMIC BOOK DEBUT validation
             if (!string.IsNullOrWhiteSpace(txtDebutIssue.Text))
             {
                 characterComicDebut = txtDebutIssue.Text.Trim();
             }
             else
             {
-                MessageBox.Show("Character name must not be empty");
+                MessageBox.Show("Debut issue must not be empty");
                 validData = false;
             }
 
@@ -122,6 +114,9 @@ namespace CPW211_TeamProject
                     }
                 }
                 catch (ArgumentException) { }
+            }
+            else { // Show list of errors
+            
             }
         }
     }
