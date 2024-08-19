@@ -39,7 +39,7 @@ namespace CPW211_TeamProject
                 {
                     int characterAge = Convert.ToInt32(txtCharacterAge.Text.Trim());
                 }
-                catch (FormatException exc)
+                catch (FormatException)
                 {
                     listOfErrors += "Character age must be a valid integer\n";
                     validData = false;
@@ -47,10 +47,6 @@ namespace CPW211_TeamProject
 
                 // COMIC BOOK DEBUT validation
                 if (string.IsNullOrWhiteSpace(txtDebutIssue.Text))
-                {
-                    string characterComicDebut = txtDebutIssue.Text.Trim();
-                }
-                else
                 {
                     listOfErrors += "Debut issue must not be empty\n";
                     validData = false;
