@@ -72,7 +72,7 @@ namespace CPW211_TeamProject
                             dbContext.Characters.Update(selectedCharacter);
                             dbContext.SaveChanges();
                             PopulateList();
-                            MessageBox.Show(selectedCharacter.Name + " was updated", MessageBoxButtons.OK);
+                            MessageBox.Show($"{selectedCharacter.Name} was updated");
                         }
                     }
                     catch (ArgumentException) { }
