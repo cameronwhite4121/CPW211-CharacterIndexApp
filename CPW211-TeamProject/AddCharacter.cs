@@ -36,6 +36,7 @@ namespace CPW211_TeamProject
             string characterComicDebut = "";
 
             bool validData = true;
+            string listOfErrors = null;
 
             // Validate textbox.text
 
@@ -48,13 +49,13 @@ namespace CPW211_TeamProject
                 CharacterContext dbContextCharacter = new();
                 if (dbContextCharacter.Characters.Any(c => c.Name == characterName))
                 {
-                    MessageBox.Show("Character already exists");
+                    listOfErrors += "Character already exists/n";
                     validData = false;
                 }
             }
             else
             {
-                MessageBox.Show("Character name must not be empty");
+                listOfErrors += "Character name must not be empty/n";
                 validData = false;
             }
 
@@ -65,7 +66,7 @@ namespace CPW211_TeamProject
             }
             catch (FormatException exc)
             {
-                MessageBox.Show("Character age must be a valid integer");
+                listOfErrors += "Character age must be a valid integer/n";
                 validData = false;
             }
 
@@ -93,7 +94,7 @@ namespace CPW211_TeamProject
             }
             else
             {
-                MessageBox.Show("Debut issue must not be empty");
+                listOfErrors += "Debut issue must not be empty/n";
                 validData = false;
             }
 
@@ -116,7 +117,7 @@ namespace CPW211_TeamProject
                 catch (ArgumentException) { }
             }
             else { // Show list of errors
-            
+                MessageBox.Show(listOfErrors);
             }
         }
     }
