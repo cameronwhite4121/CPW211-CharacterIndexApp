@@ -49,13 +49,13 @@ namespace CPW211_TeamProject
                 CharacterContext dbContextCharacter = new();
                 if (dbContextCharacter.Characters.Any(c => c.Name == characterName))
                 {
-                    listOfErrors += "Character already exists/n";
+                    listOfErrors += "Character already exists\n";
                     validData = false;
                 }
             }
             else
             {
-                listOfErrors += "Character name must not be empty/n";
+                listOfErrors += "Character name must not be empty\n";
                 validData = false;
             }
 
@@ -66,7 +66,7 @@ namespace CPW211_TeamProject
             }
             catch (FormatException exc)
             {
-                listOfErrors += "Character age must be a valid integer/n";
+                listOfErrors += "Character age must be a valid integer\n";
                 validData = false;
             }
 
@@ -94,7 +94,7 @@ namespace CPW211_TeamProject
             }
             else
             {
-                listOfErrors += "Debut issue must not be empty/n";
+                listOfErrors += "Debut issue must not be empty\n";
                 validData = false;
             }
 
@@ -117,7 +117,7 @@ namespace CPW211_TeamProject
                 catch (ArgumentException) { }
             }
             else { // Show list of errors
-                MessageBox.Show(listOfErrors);
+                MessageBox.Show(listOfErrors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
