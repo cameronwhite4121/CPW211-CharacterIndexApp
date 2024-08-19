@@ -21,28 +21,72 @@ namespace CPW211_TeamProject
 
         private void btnUpdateCharacter_Click(object sender, EventArgs e)
         {
-            // Open add character form but change the labels
+            // Validation is similar to add character validation but not quite
             try
             {
-                CharacterContext dbContext = new CharacterContext();
-                Character selectedCharacter = lsbxCharacterList.SelectedItem as Character;
-                selectedCharacter.Name = txtCharacterName.Text;
-                selectedCharacter.Age = Convert.ToInt32(txtCharacterAge.Text);
-                selectedCharacter.SuperPower = txtCharacterPower.Text;
-                selectedCharacter.Rival = txtCharacterRival.Text;
-                selectedCharacter.DebutDate = dtpDebutDate.Value;
-                selectedCharacter.ComicBookDebut = txtDebutIssue.Text;
+                bool validData = true;
+                string listOfErrors = null;
 
-                // Add further validation here, just like the add character form
+                // NAME validation
+                if (string.IsNullOrWhiteSpace(txtCharacterName.Text))
+                {
+                    listOfErrors += "Character name must not be empty\n";
+                    validData = false;
+                }
 
-                dbContext.Characters.Update(selectedCharacter);
-                dbContext.SaveChanges();
-                PopulateList();
+                // AGE validation
+                try
+                {
+                    int characterAge = Convert.ToInt32(txtCharacterAge.Text.Trim());
+                }
+                catch (FormatException exc)
+                {
+                    listOfErrors += "Character age must be a valid integer\n";
+                    validData = false;
+                }
+
+                // COMIC BOOK DEBUT validation
+                if (string.IsNullOrWhiteSpace(txtDebutIssue.Text))
+                {
+                    string characterComicDebut = txtDebutIssue.Text.Trim();
+                }
+                else
+                {
+                    listOfErrors += "Debut issue must not be empty\n";
+                    validData = false;
+                }
+
+                if (validData)
+                {
+                    try
+                    {
+
+                        CharacterContext dbContext = new CharacterContext();
+                        Character selectedCharacter = lsbxCharacterList.SelectedItem as Character;
+                        selectedCharacter.Name = txtCharacterName.Text;
+                        selectedCharacter.Age = Convert.ToInt32(txtCharacterAge.Text);
+                        selectedCharacter.SuperPower = txtCharacterPower.Text;
+                        selectedCharacter.Rival = txtCharacterRival.Text;
+                        selectedCharacter.DebutDate = dtpDebutDate.Value;
+                        selectedCharacter.ComicBookDebut = txtDebutIssue.Text;
+
+                        // Validate the data using the model's data annotations
+                        if (ValidationHelper.Validate(selectedCharacter))
+                        {
+                            dbContext.Characters.Update(selectedCharacter);
+                            dbContext.SaveChanges();
+                            PopulateList();
+                            MessageBox.Show(selectedCharacter.Name + " was updated");
+                        }
+                    }
+                    catch (ArgumentException) { }
+                }
+                else
+                {
+                    MessageBox.Show(listOfErrors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (ArgumentNullException) 
-            {
-                MessageBox.Show("All fields must be filled out");
-            }
+            catch (ArgumentNullException) { }
         }
 
         private void btnDeleteCharacter_Click(object sender, EventArgs e)
