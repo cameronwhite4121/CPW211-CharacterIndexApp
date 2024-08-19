@@ -36,10 +36,11 @@ namespace CPW211_TeamProject
             string characterComicDebut = "";
 
             bool validData = true;
+            string listOfErrors = null;
 
             // Validate textbox.text
 
-            // Validate name
+            // NAME validation
             if (!string.IsNullOrWhiteSpace(txtCharacterName.Text))
             {
                 characterName = txtCharacterName.Text.Trim();
@@ -48,45 +49,37 @@ namespace CPW211_TeamProject
                 CharacterContext dbContextCharacter = new();
                 if (dbContextCharacter.Characters.Any(c => c.Name == characterName))
                 {
-                    MessageBox.Show("Character already exists");
+                    listOfErrors += "Character already exists\n";
                     validData = false;
                 }
             }
-
-
             else
             {
-                MessageBox.Show("Character name must not be empty");
+                listOfErrors += "Character name must not be empty\n";
                 validData = false;
             }
 
-            // Validate age
+            // AGE validation
             try
             {
                 characterAge = Convert.ToInt32(txtCharacterAge.Text.Trim());
             }
             catch (FormatException exc)
             {
-                MessageBox.Show("Character age must be a valid integer");
+                listOfErrors += "Character age must be a valid integer\n";
                 validData = false;
             }
 
-            // Check for unrequired power
+            // POWER validation (not required actually)
             if (!string.IsNullOrWhiteSpace(txtCharacterPower.Text))
             {
                 characterPower = txtCharacterPower.Text.Trim();
             }
 
-            // Check for unrequired rival
+            // RIVAL validation (not required actually)
             if (!string.IsNullOrWhiteSpace(txtCharacterRival.Text))
             {
                 characterRival = txtCharacterRival.Text.Trim();
-            }
-
-            // Check for unrequired power
-            if (!string.IsNullOrWhiteSpace(txtCharacterPower.Text))
-            {
-                characterPower = txtCharacterPower.Text.Trim();
             }
 
             // grab the date from the date time picker
@@ -94,14 +87,14 @@ namespace CPW211_TeamProject
             // the DTP already has validation built in
             characterDebutDate = DTPDebutDate.Value;
             
-            // Validate comic debut
+            // COMIC BOOK DEBUT validation
             if (!string.IsNullOrWhiteSpace(txtDebutIssue.Text))
             {
                 characterComicDebut = txtDebutIssue.Text.Trim();
             }
             else
             {
-                MessageBox.Show("Character name must not be empty");
+                listOfErrors += "Debut issue must not be empty\n";
                 validData = false;
             }
 
@@ -122,6 +115,9 @@ namespace CPW211_TeamProject
                     }
                 }
                 catch (ArgumentException) { }
+            }
+            else { // Show list of errors
+                MessageBox.Show(listOfErrors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
