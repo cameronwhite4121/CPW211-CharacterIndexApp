@@ -12,10 +12,10 @@ namespace CPW211_TeamProject.Models
         /// <summary>
         /// This method takes an object as a parameter and uses
         /// that objects data annotations to validate the object.
-        /// It then returns a list of errors if any.
+        /// It then returns a boolean if the data is valid.
         /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
+        /// <param name="model">The object to validate</param>
+        /// <returns>True if datas is valid, false if otherwise</returns>
         public static bool Validate(object model)
         {           
             var validationContext = new ValidationContext(model);
@@ -23,18 +23,21 @@ namespace CPW211_TeamProject.Models
             bool isValid = Validator.TryValidateObject(model, validationContext, validationResults, true);
 
             // No errors to be returned
-            if(isValid)
+            if (isValid)
             {
                 return true;
             }
+            else { // Show errors + return false
 
-            // Show errors
-            IEnumerable<string?> errorMessages = validationResults.Select(vr => vr.ErrorMessage);
-            string errorMessageDisplay = string.Join(Environment.NewLine, errorMessages);
-            MessageBox.Show(errorMessageDisplay);
+                string listOfErrors = null;
+                foreach (var errorMessage in validationResults)
+                {
+                    listOfErrors += errorMessage + "\n";
+                }
+                MessageBox.Show(listOfErrors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            // Returns list of errors
-            return false; 
+                return false;
+            }          
         }
     }
 }
