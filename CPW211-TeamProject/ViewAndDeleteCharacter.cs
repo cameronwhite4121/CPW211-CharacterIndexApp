@@ -34,6 +34,22 @@ namespace CPW211_TeamProject
                     validData = false;
                 }
 
+                // if the Character is already in the database, show an error message
+
+                using (CharacterContext dbContextCharacter = new())
+                {
+                    string characterName = txtCharacterName.Text.Trim();
+
+                    var character = dbContextCharacter.Characters
+                                    .Where(c => c.Name == characterName)
+                                    .FirstOrDefault();
+                    if (character != null)
+                    {
+                        listOfErrors += "Character already exist\n";
+                        validData = false;
+                    }
+                }
+
                 // AGE validation
                 try
                 {
