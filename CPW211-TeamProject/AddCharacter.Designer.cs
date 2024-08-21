@@ -35,6 +35,7 @@
             txtCharacterName = new TextBox();
             txtCharacterAge = new TextBox();
             groupBox1 = new GroupBox();
+            rtxtPower = new RichTextBox();
             DTPDebutDate = new DateTimePicker();
             txtDebutIssue = new TextBox();
             label7 = new Label();
@@ -42,13 +43,12 @@
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
-            rtxtPower = new RichTextBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // btnAddCharacter
             // 
-            btnAddCharacter.Location = new Point(214, 240);
+            btnAddCharacter.Location = new Point(287, 238);
             btnAddCharacter.Name = "btnAddCharacter";
             btnAddCharacter.Size = new Size(106, 34);
             btnAddCharacter.TabIndex = 11;
@@ -77,11 +77,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(35, 117);
+            label3.Location = new Point(294, 76);
             label3.Name = "label3";
-            label3.Size = new Size(105, 15);
+            label3.Size = new Size(66, 30);
             label3.TabIndex = 4;
-            label3.Text = "Character's Power:";
+            label3.Text = "Character's\r\nPowers:";
             // 
             // txtCharacterName
             // 
@@ -114,24 +114,32 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Location = new Point(33, 30);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(483, 182);
+            groupBox1.Size = new Size(640, 191);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Character Details";
             // 
+            // rtxtPower
+            // 
+            rtxtPower.Location = new Point(381, 73);
+            rtxtPower.Name = "rtxtPower";
+            rtxtPower.Size = new Size(212, 94);
+            rtxtPower.TabIndex = 14;
+            rtxtPower.Text = "";
+            // 
             // DTPDebutDate
             // 
-            DTPDebutDate.Location = new Point(369, 73);
+            DTPDebutDate.Location = new Point(381, 32);
             DTPDebutDate.MaxDate = new DateTime(2024, 8, 14, 0, 0, 0, 0);
             DTPDebutDate.MinDate = new DateTime(1930, 1, 1, 0, 0, 0, 0);
             DTPDebutDate.Name = "DTPDebutDate";
-            DTPDebutDate.Size = new Size(100, 23);
+            DTPDebutDate.Size = new Size(208, 23);
             DTPDebutDate.TabIndex = 9;
             DTPDebutDate.Value = new DateTime(2024, 8, 13, 0, 0, 0, 0);
             // 
             // txtDebutIssue
             // 
-            txtDebutIssue.Location = new Point(369, 114);
+            txtDebutIssue.Location = new Point(157, 112);
             txtDebutIssue.Name = "txtDebutIssue";
             txtDebutIssue.Size = new Size(100, 23);
             txtDebutIssue.TabIndex = 10;
@@ -139,7 +147,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(277, 117);
+            label7.Location = new Point(69, 115);
             label7.Name = "label7";
             label7.Size = new Size(71, 15);
             label7.TabIndex = 13;
@@ -147,7 +155,7 @@
             // 
             // txtCharacterRival
             // 
-            txtCharacterRival.Location = new Point(369, 32);
+            txtCharacterRival.Location = new Point(157, 149);
             txtCharacterRival.Name = "txtCharacterRival";
             txtCharacterRival.Size = new Size(100, 23);
             txtCharacterRival.TabIndex = 8;
@@ -163,7 +171,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(279, 76);
+            label5.Location = new Point(291, 35);
             label5.Name = "label5";
             label5.Size = new Size(69, 15);
             label5.TabIndex = 9;
@@ -172,26 +180,18 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(283, 35);
+            label4.Location = new Point(71, 152);
             label4.Name = "label4";
             label4.Size = new Size(65, 15);
             label4.TabIndex = 8;
             label4.Text = "Main Rival:";
-            // 
-            // txtCharacterPower
-            // 
-            rtxtPower.Location = new Point(157, 117);
-            rtxtPower.Name = "txtCharacterPower";
-            rtxtPower.Size = new Size(100, 20);
-            rtxtPower.TabIndex = 14;
-            rtxtPower.Text = "";
             // 
             // AddCharacter
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(558, 313);
+            ClientSize = new Size(698, 313);
             Controls.Add(groupBox1);
             Controls.Add(btnAddCharacter);
             Name = "AddCharacter";

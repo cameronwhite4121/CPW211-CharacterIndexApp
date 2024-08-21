@@ -32,11 +32,11 @@
             btnDeleteCharacter = new Button();
             lsbxCharacterList = new ListBox();
             groupBox1 = new GroupBox();
+            rtxtCharacterPower = new RichTextBox();
             dtpDebutDate = new DateTimePicker();
             txtDebutIssue = new TextBox();
             label7 = new Label();
             txtCharacterRival = new TextBox();
-            label6 = new Label();
             label5 = new Label();
             label4 = new Label();
             txtCharacterName = new TextBox();
@@ -44,13 +44,12 @@
             txtCharacterAge = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            rtxtCharacterPower = new RichTextBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // btnUpdateCharacter
             // 
-            btnUpdateCharacter.Location = new Point(311, 95);
+            btnUpdateCharacter.Location = new Point(277, 90);
             btnUpdateCharacter.Name = "btnUpdateCharacter";
             btnUpdateCharacter.Size = new Size(112, 38);
             btnUpdateCharacter.TabIndex = 0;
@@ -60,7 +59,7 @@
             // 
             // btnDeleteCharacter
             // 
-            btnDeleteCharacter.Location = new Point(311, 197);
+            btnDeleteCharacter.Location = new Point(277, 192);
             btnDeleteCharacter.Name = "btnDeleteCharacter";
             btnDeleteCharacter.Size = new Size(112, 38);
             btnDeleteCharacter.TabIndex = 2;
@@ -72,7 +71,7 @@
             // 
             lsbxCharacterList.FormattingEnabled = true;
             lsbxCharacterList.ItemHeight = 15;
-            lsbxCharacterList.Location = new Point(37, 30);
+            lsbxCharacterList.Location = new Point(25, 30);
             lsbxCharacterList.Name = "lsbxCharacterList";
             lsbxCharacterList.Size = new Size(236, 274);
             lsbxCharacterList.TabIndex = 3;
@@ -85,7 +84,6 @@
             groupBox1.Controls.Add(txtDebutIssue);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(txtCharacterRival);
-            groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(txtCharacterName);
@@ -93,26 +91,34 @@
             groupBox1.Controls.Add(txtCharacterAge);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label3);
-            groupBox1.Location = new Point(456, 30);
+            groupBox1.Location = new Point(404, 30);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(291, 274);
+            groupBox1.Size = new Size(598, 274);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Character Details";
             // 
+            // rtxtCharacterPower
+            // 
+            rtxtCharacterPower.Location = new Point(343, 106);
+            rtxtCharacterPower.Name = "rtxtCharacterPower";
+            rtxtCharacterPower.Size = new Size(215, 125);
+            rtxtCharacterPower.TabIndex = 16;
+            rtxtCharacterPower.Text = "";
+            // 
             // dtpDebutDate
             // 
-            dtpDebutDate.Location = new Point(155, 195);
+            dtpDebutDate.Location = new Point(343, 51);
             dtpDebutDate.MaxDate = new DateTime(2024, 8, 14, 0, 0, 0, 0);
             dtpDebutDate.MinDate = new DateTime(1930, 1, 1, 0, 0, 0, 0);
             dtpDebutDate.Name = "dtpDebutDate";
-            dtpDebutDate.Size = new Size(100, 23);
+            dtpDebutDate.Size = new Size(215, 23);
             dtpDebutDate.TabIndex = 15;
             dtpDebutDate.Value = new DateTime(2024, 8, 13, 0, 0, 0, 0);
             // 
             // txtDebutIssue
             // 
-            txtDebutIssue.Location = new Point(155, 233);
+            txtDebutIssue.Location = new Point(138, 162);
             txtDebutIssue.Name = "txtDebutIssue";
             txtDebutIssue.Size = new Size(100, 23);
             txtDebutIssue.TabIndex = 14;
@@ -120,7 +126,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(58, 236);
+            label7.Location = new Point(41, 165);
             label7.Name = "label7";
             label7.Size = new Size(71, 15);
             label7.TabIndex = 13;
@@ -128,23 +134,15 @@
             // 
             // txtCharacterRival
             // 
-            txtCharacterRival.Location = new Point(155, 151);
+            txtCharacterRival.Location = new Point(138, 208);
             txtCharacterRival.Name = "txtCharacterRival";
             txtCharacterRival.Size = new Size(100, 23);
             txtCharacterRival.TabIndex = 11;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(205, 150);
-            label6.Name = "label6";
-            label6.Size = new Size(0, 15);
-            label6.TabIndex = 10;
-            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(60, 195);
+            label5.Location = new Point(264, 57);
             label5.Name = "label5";
             label5.Size = new Size(69, 15);
             label5.TabIndex = 9;
@@ -153,7 +151,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(64, 154);
+            label4.Location = new Point(47, 211);
             label4.Name = "label4";
             label4.Size = new Size(65, 15);
             label4.TabIndex = 8;
@@ -161,7 +159,7 @@
             // 
             // txtCharacterName
             // 
-            txtCharacterName.Location = new Point(155, 25);
+            txtCharacterName.Location = new Point(138, 51);
             txtCharacterName.Name = "txtCharacterName";
             txtCharacterName.Size = new Size(100, 23);
             txtCharacterName.TabIndex = 5;
@@ -169,7 +167,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(34, 28);
+            label1.Location = new Point(17, 54);
             label1.Name = "label1";
             label1.Size = new Size(104, 15);
             label1.TabIndex = 2;
@@ -177,7 +175,7 @@
             // 
             // txtCharacterAge
             // 
-            txtCharacterAge.Location = new Point(155, 66);
+            txtCharacterAge.Location = new Point(138, 106);
             txtCharacterAge.Name = "txtCharacterAge";
             txtCharacterAge.Size = new Size(100, 23);
             txtCharacterAge.TabIndex = 6;
@@ -185,7 +183,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(45, 69);
+            label2.Location = new Point(28, 109);
             label2.Name = "label2";
             label2.Size = new Size(93, 15);
             label2.TabIndex = 3;
@@ -194,26 +192,18 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(33, 110);
+            label3.Location = new Point(267, 109);
             label3.Name = "label3";
-            label3.Size = new Size(105, 15);
+            label3.Size = new Size(66, 30);
             label3.TabIndex = 4;
-            label3.Text = "Character's Power:";
-            // 
-            // rtxtCharacterPower
-            // 
-            rtxtCharacterPower.Location = new Point(155, 107);
-            rtxtCharacterPower.Name = "rtxtCharacterPower";
-            rtxtCharacterPower.Size = new Size(100, 24);
-            rtxtCharacterPower.TabIndex = 16;
-            rtxtCharacterPower.Text = "";
+            label3.Text = "Character's\r\nPower:";
             // 
             // ViewAndDeleteCharacter
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(789, 362);
+            ClientSize = new Size(1027, 365);
             Controls.Add(groupBox1);
             Controls.Add(lsbxCharacterList);
             Controls.Add(btnDeleteCharacter);
@@ -235,7 +225,6 @@
         private TextBox txtDebutIssue;
         private Label label7;
         private TextBox txtCharacterRival;
-        private Label label6;
         private Label label5;
         private Label label4;
         private TextBox txtCharacterName;
