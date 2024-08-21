@@ -30,7 +30,7 @@ namespace CPW211_TeamProject
 
             string characterName = "";
             int characterAge = 0;
-            string? characterPower = "No power/s";
+            List<string> characterPower = new List<string>();
             string? characterRival = "No rival/s";
             DateTime characterDebutDate = new DateTime();
             string characterComicDebut = "";
@@ -76,9 +76,23 @@ namespace CPW211_TeamProject
             }
 
             // POWER validation (not required actually)
-            if (!string.IsNullOrWhiteSpace(txtCharacterPower.Text))
+            if (!string.IsNullOrWhiteSpace(rtxtPower.Text))
             {
-                characterPower = txtCharacterPower.Text.Trim();
+                var superPowers = rtxtPower.Text
+                                    .Split(',')
+                                    .Select(s => s.Trim())
+                                    .Where(s => !string.IsNullOrWhiteSpace(s))
+                                    .ToList();
+
+                if (superPowers.Count == 0)
+                {
+                    characterPower.Add("No Power/s");
+                }
+            }
+
+            else
+            {
+               characterPower.Add("No Power/s");
             }
 
             // RIVAL validation (not required actually)
@@ -91,7 +105,7 @@ namespace CPW211_TeamProject
             // and store it in the characterDebutDate variable
             // the DTP already has validation built in
             characterDebutDate = DTPDebutDate.Value;
-            
+
             // COMIC BOOK DEBUT validation
             if (!string.IsNullOrWhiteSpace(txtDebutIssue.Text))
             {
@@ -121,9 +135,15 @@ namespace CPW211_TeamProject
                 }
                 catch (ArgumentException) { }
             }
-            else { // Show list of errors
+            else
+            { // Show list of errors
                 MessageBox.Show(listOfErrors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtCharacterPower_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

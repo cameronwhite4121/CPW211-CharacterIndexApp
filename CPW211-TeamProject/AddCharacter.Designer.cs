@@ -34,7 +34,6 @@
             label3 = new Label();
             txtCharacterName = new TextBox();
             txtCharacterAge = new TextBox();
-            txtCharacterPower = new TextBox();
             groupBox1 = new GroupBox();
             DTPDebutDate = new DateTimePicker();
             txtDebutIssue = new TextBox();
@@ -43,6 +42,7 @@
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
+            rtxtPower = new RichTextBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -97,15 +97,9 @@
             txtCharacterAge.Size = new Size(100, 23);
             txtCharacterAge.TabIndex = 6;
             // 
-            // txtCharacterPower
-            // 
-            txtCharacterPower.Location = new Point(157, 114);
-            txtCharacterPower.Name = "txtCharacterPower";
-            txtCharacterPower.Size = new Size(100, 23);
-            txtCharacterPower.TabIndex = 7;
-            // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(rtxtPower);
             groupBox1.Controls.Add(DTPDebutDate);
             groupBox1.Controls.Add(txtDebutIssue);
             groupBox1.Controls.Add(label7);
@@ -114,7 +108,6 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(txtCharacterName);
-            groupBox1.Controls.Add(txtCharacterPower);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(txtCharacterAge);
             groupBox1.Controls.Add(label2);
@@ -185,6 +178,14 @@
             label4.TabIndex = 8;
             label4.Text = "Main Rival:";
             // 
+            // txtCharacterPower
+            // 
+            rtxtPower.Location = new Point(157, 117);
+            rtxtPower.Name = "txtCharacterPower";
+            rtxtPower.Size = new Size(100, 20);
+            rtxtPower.TabIndex = 14;
+            rtxtPower.Text = "";
+            // 
             // AddCharacter
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -208,7 +209,6 @@
         private Label label3;
         private TextBox txtCharacterName;
         private TextBox txtCharacterAge;
-        private TextBox txtCharacterPower;
         private GroupBox groupBox1;
         private Label label5;
         private Label label4;
@@ -217,5 +217,6 @@
         private TextBox txtDebutIssue;
         private Label label7;
         private DateTimePicker DTPDebutDate;
+        private RichTextBox rtxtPower;
     }
 }
