@@ -52,7 +52,7 @@
             btnUpdateCharacter.Location = new Point(277, 90);
             btnUpdateCharacter.Name = "btnUpdateCharacter";
             btnUpdateCharacter.Size = new Size(112, 38);
-            btnUpdateCharacter.TabIndex = 0;
+            btnUpdateCharacter.TabIndex = 8;
             btnUpdateCharacter.Text = "Update Character";
             btnUpdateCharacter.UseVisualStyleBackColor = true;
             btnUpdateCharacter.Click += btnUpdateCharacter_Click;
@@ -62,7 +62,7 @@
             btnDeleteCharacter.Location = new Point(277, 192);
             btnDeleteCharacter.Name = "btnDeleteCharacter";
             btnDeleteCharacter.Size = new Size(112, 38);
-            btnDeleteCharacter.TabIndex = 2;
+            btnDeleteCharacter.TabIndex = 9;
             btnDeleteCharacter.Text = "Delete Character";
             btnDeleteCharacter.UseVisualStyleBackColor = true;
             btnDeleteCharacter.Click += btnDeleteCharacter_Click;
@@ -74,7 +74,7 @@
             lsbxCharacterList.Location = new Point(25, 30);
             lsbxCharacterList.Name = "lsbxCharacterList";
             lsbxCharacterList.Size = new Size(236, 274);
-            lsbxCharacterList.TabIndex = 3;
+            lsbxCharacterList.TabIndex = 1;
             lsbxCharacterList.SelectedIndexChanged += lsbxCharacterList_SelectedIndexChanged;
             // 
             // groupBox1
@@ -103,7 +103,7 @@
             rtxtCharacterPower.Location = new Point(343, 106);
             rtxtCharacterPower.Name = "rtxtCharacterPower";
             rtxtCharacterPower.Size = new Size(215, 125);
-            rtxtCharacterPower.TabIndex = 16;
+            rtxtCharacterPower.TabIndex = 7;
             rtxtCharacterPower.Text = "";
             // 
             // dtpDebutDate
@@ -113,7 +113,7 @@
             dtpDebutDate.MinDate = new DateTime(1930, 1, 1, 0, 0, 0, 0);
             dtpDebutDate.Name = "dtpDebutDate";
             dtpDebutDate.Size = new Size(215, 23);
-            dtpDebutDate.TabIndex = 15;
+            dtpDebutDate.TabIndex = 6;
             dtpDebutDate.Value = new DateTime(2024, 8, 13, 0, 0, 0, 0);
             // 
             // txtDebutIssue
@@ -121,7 +121,7 @@
             txtDebutIssue.Location = new Point(138, 162);
             txtDebutIssue.Name = "txtDebutIssue";
             txtDebutIssue.Size = new Size(100, 23);
-            txtDebutIssue.TabIndex = 14;
+            txtDebutIssue.TabIndex = 4;
             // 
             // label7
             // 
@@ -137,7 +137,7 @@
             txtCharacterRival.Location = new Point(138, 208);
             txtCharacterRival.Name = "txtCharacterRival";
             txtCharacterRival.Size = new Size(100, 23);
-            txtCharacterRival.TabIndex = 11;
+            txtCharacterRival.TabIndex = 5;
             // 
             // label5
             // 
@@ -162,7 +162,7 @@
             txtCharacterName.Location = new Point(138, 51);
             txtCharacterName.Name = "txtCharacterName";
             txtCharacterName.Size = new Size(100, 23);
-            txtCharacterName.TabIndex = 5;
+            txtCharacterName.TabIndex = 2;
             // 
             // label1
             // 
@@ -178,7 +178,7 @@
             txtCharacterAge.Location = new Point(138, 106);
             txtCharacterAge.Name = "txtCharacterAge";
             txtCharacterAge.Size = new Size(100, 23);
-            txtCharacterAge.TabIndex = 6;
+            txtCharacterAge.TabIndex = 3;
             // 
             // label2
             // 
@@ -200,6 +200,7 @@
             // 
             // ViewAndDeleteCharacter
             // 
+            AcceptButton = btnUpdateCharacter;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;

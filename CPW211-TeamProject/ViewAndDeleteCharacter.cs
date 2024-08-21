@@ -34,8 +34,8 @@ namespace CPW211_TeamProject
                     validData = false;
                 }
 
+/*
                 // if the Character is already in the database, show an error message
-
                 using (CharacterContext dbContextCharacter = new())
                 {
                     string characterName = txtCharacterName.Text.Trim();
@@ -49,6 +49,7 @@ namespace CPW211_TeamProject
                         validData = false;
                     }
                 }
+*/
 
                 // AGE validation
                 try

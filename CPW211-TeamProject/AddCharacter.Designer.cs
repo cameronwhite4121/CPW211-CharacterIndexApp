@@ -51,7 +51,7 @@
             btnAddCharacter.Location = new Point(287, 238);
             btnAddCharacter.Name = "btnAddCharacter";
             btnAddCharacter.Size = new Size(106, 34);
-            btnAddCharacter.TabIndex = 11;
+            btnAddCharacter.TabIndex = 7;
             btnAddCharacter.Text = "Add Character";
             btnAddCharacter.UseVisualStyleBackColor = true;
             btnAddCharacter.Click += btnAddCharacter_Click;
@@ -88,14 +88,14 @@
             txtCharacterName.Location = new Point(157, 32);
             txtCharacterName.Name = "txtCharacterName";
             txtCharacterName.Size = new Size(100, 23);
-            txtCharacterName.TabIndex = 5;
+            txtCharacterName.TabIndex = 1;
             // 
             // txtCharacterAge
             // 
             txtCharacterAge.Location = new Point(157, 73);
             txtCharacterAge.Name = "txtCharacterAge";
             txtCharacterAge.Size = new Size(100, 23);
-            txtCharacterAge.TabIndex = 6;
+            txtCharacterAge.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -124,7 +124,7 @@
             rtxtPower.Location = new Point(381, 73);
             rtxtPower.Name = "rtxtPower";
             rtxtPower.Size = new Size(212, 94);
-            rtxtPower.TabIndex = 14;
+            rtxtPower.TabIndex = 6;
             rtxtPower.Text = "";
             // 
             // DTPDebutDate
@@ -134,7 +134,7 @@
             DTPDebutDate.MinDate = new DateTime(1930, 1, 1, 0, 0, 0, 0);
             DTPDebutDate.Name = "DTPDebutDate";
             DTPDebutDate.Size = new Size(208, 23);
-            DTPDebutDate.TabIndex = 9;
+            DTPDebutDate.TabIndex = 5;
             DTPDebutDate.Value = new DateTime(2024, 8, 13, 0, 0, 0, 0);
             // 
             // txtDebutIssue
@@ -142,7 +142,7 @@
             txtDebutIssue.Location = new Point(157, 112);
             txtDebutIssue.Name = "txtDebutIssue";
             txtDebutIssue.Size = new Size(100, 23);
-            txtDebutIssue.TabIndex = 10;
+            txtDebutIssue.TabIndex = 3;
             // 
             // label7
             // 
@@ -158,7 +158,7 @@
             txtCharacterRival.Location = new Point(157, 149);
             txtCharacterRival.Name = "txtCharacterRival";
             txtCharacterRival.Size = new Size(100, 23);
-            txtCharacterRival.TabIndex = 8;
+            txtCharacterRival.TabIndex = 4;
             // 
             // label6
             // 
@@ -188,6 +188,7 @@
             // 
             // AddCharacter
             // 
+            AcceptButton = btnAddCharacter;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
