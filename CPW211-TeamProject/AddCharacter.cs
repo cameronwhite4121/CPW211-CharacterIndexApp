@@ -46,11 +46,16 @@ namespace CPW211_TeamProject
                 characterName = txtCharacterName.Text.Trim();
 
                 // if the Character is already in the database, show an error message
-                CharacterContext dbContextCharacter = new();
-                if (dbContextCharacter.Characters.Any(c => c.Name == characterName))
+                using (CharacterContext dbContextCharacter = new())
                 {
-                    listOfErrors += "Character already exists\n";
-                    validData = false;
+                    var character = dbContextCharacter.Characters
+                                    .Where(c => c.Name == characterName)
+                                    .FirstOrDefault();
+                    if (character != null)
+                    {
+                        listOfErrors += "Character already exist\n";
+                        validData = false;
+                    }
                 }
             }
             else
