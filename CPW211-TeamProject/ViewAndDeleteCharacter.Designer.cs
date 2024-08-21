@@ -40,11 +40,11 @@
             label5 = new Label();
             label4 = new Label();
             txtCharacterName = new TextBox();
-            txtCharacterPower = new TextBox();
             label1 = new Label();
             txtCharacterAge = new TextBox();
             label2 = new Label();
             label3 = new Label();
+            rtxtCharacterPower = new RichTextBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -80,6 +80,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(rtxtCharacterPower);
             groupBox1.Controls.Add(dtpDebutDate);
             groupBox1.Controls.Add(txtDebutIssue);
             groupBox1.Controls.Add(label7);
@@ -88,7 +89,6 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(txtCharacterName);
-            groupBox1.Controls.Add(txtCharacterPower);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(txtCharacterAge);
             groupBox1.Controls.Add(label2);
@@ -166,13 +166,6 @@
             txtCharacterName.Size = new Size(100, 23);
             txtCharacterName.TabIndex = 5;
             // 
-            // txtCharacterPower
-            // 
-            txtCharacterPower.Location = new Point(155, 107);
-            txtCharacterPower.Name = "txtCharacterPower";
-            txtCharacterPower.Size = new Size(100, 23);
-            txtCharacterPower.TabIndex = 7;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -207,6 +200,14 @@
             label3.TabIndex = 4;
             label3.Text = "Character's Power:";
             // 
+            // rtxtCharacterPower
+            // 
+            rtxtCharacterPower.Location = new Point(155, 107);
+            rtxtCharacterPower.Name = "rtxtCharacterPower";
+            rtxtCharacterPower.Size = new Size(100, 24);
+            rtxtCharacterPower.TabIndex = 16;
+            rtxtCharacterPower.Text = "";
+            // 
             // ViewAndDeleteCharacter
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -238,11 +239,11 @@
         private Label label5;
         private Label label4;
         private TextBox txtCharacterName;
-        private TextBox txtCharacterPower;
         private Label label1;
         private TextBox txtCharacterAge;
         private Label label2;
         private Label label3;
         private DateTimePicker dtpDebutDate;
+        private RichTextBox rtxtCharacterPower;
     }
 }

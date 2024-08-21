@@ -77,7 +77,11 @@ namespace CPW211_TeamProject
                         Character selectedCharacter = lsbxCharacterList.SelectedItem as Character;
                         selectedCharacter.Name = txtCharacterName.Text;
                         selectedCharacter.Age = Convert.ToInt32(txtCharacterAge.Text);
-                        selectedCharacter.SuperPower = txtCharacterPower.Text;
+                        selectedCharacter.SuperPower = rtxtCharacterPower.Text
+                                                        .Split(',')
+                                                        .Select(s => s.Trim())
+                                                        .Where(s => !string.IsNullOrWhiteSpace(s))
+                                                        .ToList();
                         selectedCharacter.Rival = txtCharacterRival.Text;
                         selectedCharacter.DebutDate = dtpDebutDate.Value;
                         selectedCharacter.ComicBookDebut = txtDebutIssue.Text;
@@ -158,7 +162,7 @@ namespace CPW211_TeamProject
                 Character selectedCharacter = lsbxCharacterList.SelectedItem as Character;
                 txtCharacterName.Text = selectedCharacter.Name.ToString();
                 txtCharacterAge.Text = selectedCharacter.Age.ToString();
-                txtCharacterPower.Text = selectedCharacter.SuperPower.ToString();
+                rtxtCharacterPower.Text = string.Join(", ", selectedCharacter.SuperPower);
                 txtCharacterRival.Text = selectedCharacter.Rival.ToString();
                 dtpDebutDate.Value = Convert.ToDateTime(selectedCharacter.DebutDate);
                 txtDebutIssue.Text = selectedCharacter.ComicBookDebut.ToString();
