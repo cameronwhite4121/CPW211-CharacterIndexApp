@@ -84,7 +84,12 @@ namespace CPW211_TeamProject
                                     .Where(s => !string.IsNullOrWhiteSpace(s))
                                     .ToList();
 
-                if (superPowers.Count == 0)
+                foreach (var power in superPowers)
+                {
+                    characterPower.Add(power);
+                }
+
+                    if (superPowers.Count == 0)
                 {
                     characterPower.Add("No Power/s");
                 }
