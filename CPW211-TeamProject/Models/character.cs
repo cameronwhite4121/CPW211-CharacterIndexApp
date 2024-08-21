@@ -15,14 +15,17 @@ namespace CPW211_TeamProject.Models
     [Index(nameof(Name), IsUnique = true)] // Tell EF Core to create an index for the Name column
     public partial class Character
     {
-        public Character() { }
-        public Character(string name, int age, string power, 
+        public Character()
+        {
+            SuperPower = new List<string>();
+        }
+        public Character(string name, int age, List<string> powers, 
                          string rival, DateTime debutDate, 
                          string comicDebut) 
         {
             this.Name = name;
             this.Age = age;
-            this.SuperPower = power;
+            this.SuperPower = powers;
             this.Rival = rival;
             this.DebutDate = debutDate;
             this.ComicBookDebut = comicDebut;
@@ -51,8 +54,24 @@ namespace CPW211_TeamProject.Models
         /// in case they do not have one. Handles multiple powers in 
         /// one string
         /// </summary> 
-        [StringLength(100, ErrorMessage = "Power/powers are too long")]
-        public string? SuperPower { get; set; }
+        //[StringLength(100, ErrorMessage = "Power/powers are too long")]
+        [NotMapped] // Tell EF Core to ignore this property
+        public List<string> SuperPower { get; set; }
+
+        /// <summary>
+        /// This property is used to store the SuperPower list as a string
+        /// </summary>
+        public string SuperPowerString
+        {
+            get
+            {
+                return string.Join(", ", SuperPower);
+            }
+            set
+            {
+                SuperPower = value.Split(", ").ToList() ?? new List<string>();
+            }
+        }
 
         /// <summary> 
         /// Character's Rival, it can be left empty, 
