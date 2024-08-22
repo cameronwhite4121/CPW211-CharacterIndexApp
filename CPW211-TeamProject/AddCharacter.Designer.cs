@@ -68,7 +68,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(47, 76);
+            label2.Location = new Point(47, 78);
             label2.Name = "label2";
             label2.Size = new Size(93, 15);
             label2.TabIndex = 3;
@@ -77,7 +77,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(294, 76);
+            label3.Location = new Point(284, 113);
             label3.Name = "label3";
             label3.Size = new Size(66, 30);
             label3.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             // txtCharacterAge
             // 
-            txtCharacterAge.Location = new Point(157, 73);
+            txtCharacterAge.Location = new Point(157, 75);
             txtCharacterAge.Name = "txtCharacterAge";
             txtCharacterAge.Size = new Size(100, 23);
             txtCharacterAge.TabIndex = 2;
@@ -121,33 +121,33 @@
             // 
             // rtxtPower
             // 
-            rtxtPower.Location = new Point(381, 73);
+            rtxtPower.Location = new Point(371, 110);
             rtxtPower.Name = "rtxtPower";
-            rtxtPower.Size = new Size(212, 94);
+            rtxtPower.Size = new Size(212, 62);
             rtxtPower.TabIndex = 6;
             rtxtPower.Text = "";
             // 
             // DTPDebutDate
             // 
-            DTPDebutDate.Location = new Point(381, 32);
+            DTPDebutDate.Location = new Point(371, 71);
             DTPDebutDate.MaxDate = new DateTime(2024, 8, 14, 0, 0, 0, 0);
             DTPDebutDate.MinDate = new DateTime(1930, 1, 1, 0, 0, 0, 0);
             DTPDebutDate.Name = "DTPDebutDate";
-            DTPDebutDate.Size = new Size(208, 23);
+            DTPDebutDate.Size = new Size(212, 23);
             DTPDebutDate.TabIndex = 5;
             DTPDebutDate.Value = new DateTime(2024, 8, 13, 0, 0, 0, 0);
             // 
             // txtDebutIssue
             // 
-            txtDebutIssue.Location = new Point(157, 112);
+            txtDebutIssue.Location = new Point(371, 32);
             txtDebutIssue.Name = "txtDebutIssue";
-            txtDebutIssue.Size = new Size(100, 23);
-            txtDebutIssue.TabIndex = 3;
+            txtDebutIssue.Size = new Size(212, 23);
+            txtDebutIssue.TabIndex = 4;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(69, 115);
+            label7.Location = new Point(283, 35);
             label7.Name = "label7";
             label7.Size = new Size(71, 15);
             label7.TabIndex = 13;
@@ -155,15 +155,15 @@
             // 
             // txtCharacterRival
             // 
-            txtCharacterRival.Location = new Point(157, 149);
+            txtCharacterRival.Location = new Point(157, 120);
             txtCharacterRival.Name = "txtCharacterRival";
             txtCharacterRival.Size = new Size(100, 23);
-            txtCharacterRival.TabIndex = 4;
+            txtCharacterRival.TabIndex = 3;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(170, 157);
+            label6.Location = new Point(170, 128);
             label6.Name = "label6";
             label6.Size = new Size(0, 15);
             label6.TabIndex = 10;
@@ -171,7 +171,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(291, 35);
+            label5.Location = new Point(281, 79);
             label5.Name = "label5";
             label5.Size = new Size(69, 15);
             label5.TabIndex = 9;
@@ -180,7 +180,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(71, 152);
+            label4.Location = new Point(71, 123);
             label4.Name = "label4";
             label4.Size = new Size(65, 15);
             label4.TabIndex = 8;
