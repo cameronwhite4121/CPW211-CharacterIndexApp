@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAndDeleteCharacter));
             btnUpdateCharacter = new Button();
             btnDeleteCharacter = new Button();
             lsbxCharacterList = new ListBox();
@@ -208,6 +209,7 @@
             Controls.Add(lsbxCharacterList);
             Controls.Add(btnDeleteCharacter);
             Controls.Add(btnUpdateCharacter);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ViewAndDeleteCharacter";
             Text = "View/Delete Character";
             Load += ViewAndDeleteCharacter_Load;

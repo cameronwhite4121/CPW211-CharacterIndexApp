@@ -89,6 +89,7 @@
             Controls.Add(btnViewDeleteCharacterForm);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             Text = "Character Index";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCharacter));
             btnAddCharacter = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -194,6 +195,7 @@
             ClientSize = new Size(698, 313);
             Controls.Add(groupBox1);
             Controls.Add(btnAddCharacter);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AddCharacter";
             Text = "Add Character";
             groupBox1.ResumeLayout(false);
