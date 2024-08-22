@@ -75,23 +75,20 @@ namespace CPW211_TeamProject
                 validData = false;
             }
 
-            // POWER validation (not required actually)
+            // Check if the user entered any powers
             if (!string.IsNullOrWhiteSpace(rtxtPower.Text))
             {
+                // Split the string by comma, trim each string, remove empty strings
                 var superPowers = rtxtPower.Text
                                     .Split(',')
                                     .Select(s => s.Trim())
                                     .Where(s => !string.IsNullOrWhiteSpace(s))
                                     .ToList();
 
+                // Add each power to the characterPower list
                 foreach (var power in superPowers)
                 {
                     characterPower.Add(power);
-                }
-
-                    if (superPowers.Count == 0)
-                {
-                    characterPower.Add("No Power/s");
                 }
             }
 

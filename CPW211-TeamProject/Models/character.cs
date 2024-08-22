@@ -60,6 +60,7 @@ namespace CPW211_TeamProject.Models
 
         /// <summary>
         /// This property is used to store the SuperPower list as a string
+        /// and convert it back to a list when needed
         /// </summary>
         public string SuperPowerString
         {

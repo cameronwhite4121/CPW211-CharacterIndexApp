@@ -79,6 +79,7 @@ namespace CPW211_TeamProject
                         Character selectedCharacter = lsbxCharacterList.SelectedItem as Character;
                         selectedCharacter.Name = txtCharacterName.Text;
                         selectedCharacter.Age = Convert.ToInt32(txtCharacterAge.Text);
+                        // Split the super power string by commas, trim the whitespace, remove any empty strings, and convert to a list
                         selectedCharacter.SuperPower = rtxtCharacterPower.Text
                                                         .Split(',')
                                                         .Select(s => s.Trim())
@@ -164,6 +165,7 @@ namespace CPW211_TeamProject
                 Character selectedCharacter = lsbxCharacterList.SelectedItem as Character;
                 txtCharacterName.Text = selectedCharacter.Name.ToString();
                 txtCharacterAge.Text = selectedCharacter.Age.ToString();
+                // Join the super power list into a string separated by commas
                 rtxtCharacterPower.Text = string.Join(", ", selectedCharacter.SuperPower);
                 txtCharacterRival.Text = selectedCharacter.Rival.ToString();
                 dtpDebutDate.Value = Convert.ToDateTime(selectedCharacter.DebutDate);
