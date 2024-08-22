@@ -34,22 +34,23 @@ namespace CPW211_TeamProject
                     validData = false;
                 }
 
-/*
+
                 // if the Character is already in the database, show an error message
                 using (CharacterContext dbContextCharacter = new())
                 {
-                    string characterName = txtCharacterName.Text.Trim();
+                    Character selectedCharacter = lsbxCharacterList.SelectedItem as Character;
 
-                    var character = dbContextCharacter.Characters
-                                    .Where(c => c.Name == characterName)
-                                    .FirstOrDefault();
-                    if (character != null)
+                    // Check if the character name is already in the database and is not the current character
+                    bool nameExists = dbContextCharacter.Characters
+                        .Any(c => c.Name == txtCharacterName.Text && c.Id != selectedCharacter.Id);
+
+                    if (nameExists)
                     {
-                        listOfErrors += "Character already exist\n";
+                        listOfErrors += "Character name already exists\n";
                         validData = false;
                     }
                 }
-*/
+
 
                 // AGE validation
                 try
