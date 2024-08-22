@@ -136,6 +136,7 @@ namespace CPW211_TeamProject
                         dbContext.Characters.Add(currentCharacter);
                         dbContext.SaveChanges();
                         MessageBox.Show($"{characterName} was added");
+                        this.Close(); // Close the form once the character is added
                     }
                 }
                 catch (ArgumentException) { }
