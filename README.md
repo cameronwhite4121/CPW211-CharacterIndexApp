@@ -9,15 +9,15 @@
   - Update characters
   - Delete characters
 ## Landing Form
-![image](https://github.com/user-attachments/assets/b3b82d64-b405-4321-9732-d02a9d473667)
+![form1](https://github.com/user-attachments/assets/21ffa9e3-6433-4299-94e8-47162812631a)
 - Navigation menu the user is greated to on launching the app
 - Navigates to the two main forms, the add form, and the update/delete form
 ## Add Character Form
-![image](https://github.com/user-attachments/assets/153ed85d-b94f-4fec-9d9f-b7526102ba6c)
+![form2](https://github.com/user-attachments/assets/6381404a-e7f6-4497-aaf0-8a7fff31f542)
 - Here the user adds a character with various different information like  
     the character's name, age, superpower, etc. all of which is required. 
 ## Update/Delete Form
-![image](https://github.com/user-attachments/assets/b94f924a-6f31-45d8-80cd-cbce1b48dbac)
+![form3](https://github.com/user-attachments/assets/7396dd82-2144-48f3-a519-a48d0a97ecac)
 - The update/delete form shows a list of the characters that are currently  
    stored in the database along with the information detailing the clicked  
    character.  
