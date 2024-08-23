@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             label1 = new Label();
-            pictureBox1 = new PictureBox();
             btnViewDeleteCharacterForm = new Button();
             btnAddCharacterForm = new Button();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -46,16 +46,6 @@
             label1.Size = new Size(452, 45);
             label1.TabIndex = 0;
             label1.Text = "Marvel/Dc Character Index";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(126, 90);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(253, 281);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
             // 
             // btnViewDeleteCharacterForm
             // 
@@ -79,15 +69,24 @@
             btnAddCharacterForm.UseVisualStyleBackColor = true;
             btnAddCharacterForm.Click += btnAddCharacterForm_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(126, 90);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(262, 289);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(499, 497);
+            Controls.Add(pictureBox1);
             Controls.Add(btnAddCharacterForm);
             Controls.Add(btnViewDeleteCharacterForm);
-            Controls.Add(pictureBox1);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
@@ -100,8 +99,8 @@
         #endregion
 
         private Label label1;
-        private PictureBox pictureBox1;
         private Button btnViewDeleteCharacterForm;
         private Button btnAddCharacterForm;
+        private PictureBox pictureBox1;
     }
 }

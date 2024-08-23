@@ -59,15 +59,5 @@ namespace CPW211_TeamProject.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap deadpoolxwolverine {
-            get {
-                object obj = ResourceManager.GetObject("deadpoolxwolverine", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
